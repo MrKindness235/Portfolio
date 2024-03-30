@@ -35,15 +35,25 @@ while (True):
 
     elif operator == '/':
         if num2 == 0:
-            raise ValueError('Do not divide by 0')
-        
-        result = num1 / num2
+            print('Do not divide by 0')
+
+        else:
+            result = num1 / num2
 
     elif operator == '%':
         result = num1 % num2
 
     # print result
-    print("{} {} {} = {}".format(num1, operator, num2, result))
+    if num2 == 0:
+        pass
+
+    else:
+        print("{} {} {} = {}".format(num1, operator, num2, result))
 
     # Keep last result
-    last = result
+
+    if num2 == 0:
+        pass
+
+    else:
+        last = result
