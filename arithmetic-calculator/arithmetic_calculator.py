@@ -3,57 +3,78 @@
 
 # Last result starts as 0
 last = 0
+
+# Greeting
+print("Hello, my name is Larry")
+print("Please, enter a simple calculation, such as 2 + 2 (Spaces are needed).")
+print("use the 'help' command for more info about my funtionality")
 # Constant Loop
 while (True):
     # Enter Calculation: 5 * 6
     # 5 * 6 = 30
     # Store the user input of 2 numbers and the operator
-    num1, operator, num2 = input('Enter Calculation: ').split()
+    # num1, operator, num2
+    userinput = input('Enter Calculation: ')
 
-    # Convert the strings into integers
-    if num1 == 'last':
-        num1 = last
-        num2 = int(num2)
-
-    elif num2 == 'last':
-        num1 = int(num1)
-        num2 = last
+    # Help command
+    if userinput == 'help':
+        print("Larry Version 1.0")
+        print("Addition: +")
+        print("Substraction: -")
+        print("Multiplication: *")
+        print("Division: /")
+        print("Modulo: %")
+        print("'last' will use the lastest calculated value as its value.")
 
     else:
-        num1 = int(num1)
-        num2 = int(num2)
+        # Arithmetic input
+        num1, operator, num2 = userinput.split()
 
-    # if + then we need to provide output based on addition
-    if operator == '+':
-        result = num1 + num2
+        # 'Last' value implemetation
+        if num1 == 'last':
+            num1 = last
+            num2 = int(num2)
 
-    elif operator == '-':
-        result = num1 - num2
+        elif num2 == 'last':
+            num1 = int(num1)
+            num2 = last
 
-    elif operator == '*':
-        result = num1 * num2
+        # Convert the strings into integers
+        else:
+            num1 = int(num1)
+            num2 = int(num2)
 
-    elif operator == '/':
+        # if + then we need to provide output based on addition
+        if operator == '+':
+            result = num1 + num2
+
+        elif operator == '-':
+            result = num1 - num2
+
+        elif operator == '*':
+            result = num1 * num2
+
+        elif operator == '/':
+            if num2 == 0:
+                print('Do not divide by 0')
+
+            else:
+                result = num1 / num2
+
+        elif operator == '%':
+            result = num1 % num2
+
+        # print result
         if num2 == 0:
-            print('Do not divide by 0')
+            pass
 
         else:
-            result = num1 / num2
+            print("{} {} {} = {}".format(num1, operator, num2, result))
 
-    elif operator == '%':
-        result = num1 % num2
+        # Keep last result
 
-    # print result
-    if num2 == 0:
-        pass
+        if num2 == 0:
+            pass
 
-    else:
-        print("{} {} {} = {}".format(num1, operator, num2, result))
-
-    # Keep last result
-
-    if num2 == 0:
-        pass
-
-    else:
-        last = result
+        else:
+            last = result
