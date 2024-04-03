@@ -39,3 +39,14 @@ def runquiz(questions):
         print(question["prompt"])
         for option in question["options"]:
             print(option)
+        answer = input("Enter your answer (A, B, C, or D): ").upper()
+        if answer == question["answer"]:
+            print("Correct, hooray!!")
+            score += 1
+        else:
+            print("Wrong! The correct answer was", question["answer"])
+
+    print(f"You got {score} out of {len(questions)} quesstions correct.")
+
+
+runquiz(questions)
