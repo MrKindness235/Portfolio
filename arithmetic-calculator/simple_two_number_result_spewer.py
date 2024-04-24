@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """This is the start of an Arithmatic Calculator intended for my portfolio"""
 
 # Input two values

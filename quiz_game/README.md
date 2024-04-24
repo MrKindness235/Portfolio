@@ -1,1 +1,1 @@
-A quiz game
+A quiz game written in python.

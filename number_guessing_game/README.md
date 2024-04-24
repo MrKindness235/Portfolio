@@ -1,1 +1,1 @@
-A number guessing name.
+A number guessing name written in python.

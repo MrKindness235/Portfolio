@@ -1,1 +1,1 @@
-A small hangman game
+A small hangman game written in python.

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ Second part of the Arithmethic Calculator."""
 
 # Last result starts as 0
@@ -8,6 +8,7 @@ last = 0
 print("Hello, my name is Larry")
 print("Please, enter a simple calculation, such as 2 + 2 (Spaces are needed).")
 print("use the 'help' command for more info about my funtionality")
+print("----------------------------------------------------------")
 # Constant Loop
 while (True):
     # Enter Calculation: 5 * 6
@@ -18,6 +19,7 @@ while (True):
 
     # Help command
     if userinput == 'help':
+        print("----------------------------------------------------------")
         print("Larry Version 1.0")
         print("Addition: +")
         print("Substraction: -")
@@ -25,6 +27,12 @@ while (True):
         print("Division: /")
         print("Modulo: %")
         print("'last' will use the lastest calculated value as its value.")
+        print("'exit' will exit the program.")
+        print("----------------------------------------------------------")
+
+    # Exit program
+    elif userinput == 'exit':
+        exit()
 
     else:
         # Arithmetic input
@@ -48,12 +56,15 @@ while (True):
         if operator == '+':
             result = num1 + num2
 
+        # if - then we need to provide output based on substraction
         elif operator == '-':
             result = num1 - num2
 
+        # if * then we need to provide output based on multiplication
         elif operator == '*':
             result = num1 * num2
 
+        # if / then we need to provide output based on divition
         elif operator == '/':
             if num2 == 0:
                 print('Do not divide by 0')
@@ -61,6 +72,7 @@ while (True):
             else:
                 result = num1 / num2
 
+        # if % then we need to provide output based on modulo
         elif operator == '%':
             result = num1 % num2
 
@@ -70,7 +82,7 @@ while (True):
 
         else:
             print("{} {} {} = {}".format(num1, operator, num2, result))
-
+            print("----------------------------------------------------------")
         # Keep last result
 
         if num2 == 0:

@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 """ Second part of the Arithmethic Calculator."""
 
 # Enter Calculation: 5 * 6
